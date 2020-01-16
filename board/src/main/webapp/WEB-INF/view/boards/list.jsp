@@ -11,7 +11,7 @@
 <%
 	session.getAttribute("login");
 %>
-<%-- 
+
 	${sessionScope.login}
 
 	<c:if test="${sessionScope.login != null}">
@@ -29,10 +29,10 @@
 				</div>
 			</div>
 		</c:forEach>
-	<%-- </c:if>
+	</c:if>
 	<c:if test="${sessionScope.login == null}">
 		<a href="/users/loginform">로그인</a>
-	</c:if> --%>
+	</c:if>
 
 
 </body>

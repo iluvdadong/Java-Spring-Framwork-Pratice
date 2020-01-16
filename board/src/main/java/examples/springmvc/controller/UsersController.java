@@ -60,8 +60,9 @@ public class UsersController {
 	}
 	
 	@GetMapping("/logout")
-	public String logout(HttpSession session) {
+	public String logout(HttpSession session) { //session remove하기!
+		//ex.쇼핑하다가 로그아웃할때 장바구니가 남아있으면 login정보만 없앤 것임!
 		session.removeAttribute("login");
-		return "redirect:/boards";
+		return "redirect:/boards"; //users요청했는데 로그인 안돼있으면 그냥 폼 나옴
 	}
 }

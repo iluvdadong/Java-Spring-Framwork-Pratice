@@ -9,6 +9,11 @@
       <jsp:include page="../common_lib.jsp"></jsp:include>
     </head>
   <body>
+  	<h1>로그인폼</h1>
+  	<c:if test = "${sessionScope.msg != null }">
+  		${sessionScope.msg}
+  		<c:remove var="msg" scope="session"/>
+  	</c:if>
     <div class="container">
       <div class="jumbotron mt-3">
         <h1><a href="/boards">게시판</a> 로그인 </h1>
