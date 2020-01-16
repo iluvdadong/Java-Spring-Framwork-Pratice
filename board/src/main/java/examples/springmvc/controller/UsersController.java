@@ -21,10 +21,25 @@ public class UsersController {
 	private UserService userService;
 	
 	//요청이 달라질 때는 Redirect로 가야함
+	@PostMapping("/login")
+	public String login(String userId, String password, HttpSession session) {
+		User user = userService.getUser(userId);
+		if(user != null && password.equals(user.getPassword())) {
+			//사용자가 입력한 정보와 DB에서 얻어온 정보가 일치할 때...
+			//상태정보를유지해줌.
+			user.setPassword("");
+			session.setAttribute("login", user);
+			return "redirect:/users";
+		} else {
+			//로그인에 실패한 경우
+			return "redirect:/users/loginform";
+		}
+	}
 	
 	
 	@GetMapping("/loginform") //JSP 찾는 것 => 포워딩
 	public String loginform() {
+		return "users/loginform";
 		
 	}
 	

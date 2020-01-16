@@ -11,9 +11,6 @@
 <%
 	session.getAttribute("login");
 %>
-
-
-
 <%-- 
 	${sessionScope.login}
 
