@@ -59,7 +59,7 @@
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
-			<version>1.4.191</version>
+			<version>2.1.210</version>
 		</dependency>
 
 		<!-- 커넥션 풀 라이브러리를 추가한다. spring boot 2의 경우는 hikariCP가 기본으로 사용된다.-->
